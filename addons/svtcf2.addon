@@ -1,0 +1,22 @@
+:main
+a_name SVtcF
+a_version 2
+a_author s1ngxl4rity
+
+:button wtfihn
+text Instalar SVtcF x2
+say Borrando archivos...
+nav servidor_minecraft
+exec rm ops.json
+exec rm -r world
+exec rm -r world_nether
+exec rm -r world_the_end
+exec rm server.properties
+exec rm -r plugins
+download_file https://www.dropbox.com/scl/fi/9a96fqegf6hgrbx8cb9l6/svtcfaddon.zip?rlkey=0d3pqb9rkulfamrh9khnmr8ca&st=mtoxs9a2&dl=1 svtcfaddon.zip
+cls
+say Descargando, descomprimiendo e instalando...
+unzip svtcfaddon.zip
+exec rm svtcfaddon.zip
+say LISTO!!
+pause
