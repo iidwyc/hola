@@ -1,0 +1,177 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 2024-08-17 04:09:10
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:60) ~[forge-1.20.1-47.3.6-universal.jar%23204!/:?] {re:classloading}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:37) ~[forge-1.20.1-47.3.6-universal.jar%23204!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23199!/:?] {re:classloading}
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.6.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.3.6.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.3.6.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Suspected Mod: 
+	Distant Horizons (distanthorizons), Version: 2.1.2-a
+		Issue tracker URL: https://gitlab.com/jeseibel/distant-horizons/-/issues
+		at TRANSFORMER/distanthorizons@2.1.2-a/com.seibel.distanthorizons.core.config.eventHandlers.presets.AbstractPresetConfigEventHandler.<init>(AbstractPresetConfigEventHandler.java:60)
+Stacktrace:
+	at com.seibel.distanthorizons.core.config.eventHandlers.presets.AbstractPresetConfigEventHandler.<init>(AbstractPresetConfigEventHandler.java:60) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+-- MOD distanthorizons --
+Details:
+	Caused by 0: java.lang.ExceptionInInitializerError
+		at loaderCommon.forge.com.seibel.distanthorizons.common.AbstractModInitializer.onInitializeServer(AbstractModInitializer.java:99) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+		at com.seibel.distanthorizons.forge.ForgeMain.lambda$new$1(ForgeMain.java:80) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+		at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%2352!/:?] {}
+		at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%2352!/:?] {}
+		at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+		at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+		at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:114) ~[javafmllanguage-1.20.1-47.3.6.jar%23201!/:?] {}
+		at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$4(ModContainer.java:125) ~[fmlcore-1.20.1-47.3.6.jar%23200!/:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+		at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+		at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+		at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+	Mod File: /workspaces/hola/servidor_minecraft/mods/DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar
+	Failure message: Distant Horizons (distanthorizons) encountered an error during the sided_setup event phase
+		java.lang.ExceptionInInitializerError: null
+	Mod Version: 2.1.2-a
+	Mod Issue URL: https://gitlab.com/jeseibel/distant-horizons/-/issues
+	Exception message: java.lang.NullPointerException: Cannot invoke "com.seibel.distanthorizons.core.wrapperInterfaces.config.IConfigGui.addOnScreenChangeListener(java.lang.Runnable)" because "com.seibel.distanthorizons.core.config.eventHandlers.presets.AbstractPresetConfigEventHandler.configGui" is null
+Stacktrace:
+	at com.seibel.distanthorizons.core.config.eventHandlers.presets.AbstractPresetConfigEventHandler.<init>(AbstractPresetConfigEventHandler.java:60) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+	at com.seibel.distanthorizons.core.config.eventHandlers.presets.ThreadPresetConfigEventHandler.<init>(ThreadPresetConfigEventHandler.java:138) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+	at com.seibel.distanthorizons.core.config.eventHandlers.presets.ThreadPresetConfigEventHandler.<clinit>(ThreadPresetConfigEventHandler.java:37) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+	at loaderCommon.forge.com.seibel.distanthorizons.common.AbstractModInitializer.onInitializeServer(AbstractModInitializer.java:99) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+	at com.seibel.distanthorizons.forge.ForgeMain.lambda$new$1(ForgeMain.java:80) ~[DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar%23166!/:?] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:114) ~[javafmllanguage-1.20.1-47.3.6.jar%23201!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$4(ModContainer.java:125) ~[fmlcore-1.20.1-47.3.6.jar%23200!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.5.0-1022-azure
+	Java Version: 21.0.3, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Microsoft
+	Memory: 375357216 bytes (357 MiB) / 864026624 bytes (824 MiB) up to 4190109696 bytes (3996 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7990.52
+	Virtual memory used (MB): 3844.18
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 0 total; 
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.6.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.6.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.6.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.6.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.6.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar OptiFine TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		mowziesmobs-1.6.5.jar                             |Mowzie's Mobs                 |mowziesmobs                   |1.6.4               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		kuma-api-forge-20.1.8+1.20.1.jar                  |KumaAPI                       |kuma_api                      |20.1.8              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		trashslot-forge-1.20-15.1.0.jar                   |TrashSlot                     |trashslot                     |15.1.0              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		geckolib-neoforge-1.20.1-4.4.7.jar                |GeckoLib 4                    |geckolib                      |4.4.7               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		octolib-1.20.1-0.3.jar                            |OctoLib                       |octolib                       |0.3                 |ENQUEUE_IM|Manifest: NOSIGNATURE
+		playeranimator-658587-4587214.jar                 |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		PalladiumCore-forge-1.20-2.0.0.0-forge.jar        |PalladiumCore                 |palladiumcore                 |1.20-2.0.0.0        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.12.3.54.jar                   |Just Enough Items             |jei                           |15.12.3.54          |ENQUEUE_IM|Manifest: NOSIGNATURE
+		fireproofboats-1.20.1-1.0.3.jar                   |Fireproof Boats               |fireproofboats                |1.20.1-1.0.3        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		goblintraders-forge-1.20.1-1.9.3.jar              |Goblin Traders                |goblintraders                 |1.9.3               |ENQUEUE_IM|Manifest: 0d:78:5f:44:c0:47:0c:8c:e2:63:a3:04:43:d4:12:7d:b0:7c:35:37:dc:40:b1:c1:98:ec:51:eb:3b:3c:45:99
+		sophisticatedcore-1.20.1-0.6.22.611.jar           |Sophisticated Core            |sophisticatedcore             |0.6.22.611          |ENQUEUE_IM|Manifest: NOSIGNATURE
+		rustic_engineer-1.20.1-1.0.7.jar                  |Rustic Engineer               |rustic_engineer               |1.0.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		epicfight-forge-20.8.9-1.20.1.jar                 |Epic Fight                    |epicfight                     |20.8.9              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		WeaponsOfMiracles-20.1.8.5.1.jar                  |Weapons of miracle            |wom                           |20.1.8.5.1          |ENQUEUE_IM|Manifest: NOSIGNATURE
+		citadel-2.6.0-1.20.1.jar                          |Citadel                       |citadel                       |2.6.0               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		alexsmobs-1.22.8.jar                              |Alex's Mobs                   |alexsmobs                     |1.22.8              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		mixinextras-forge-0.2.0-beta.6.jar                |MixinExtras                   |mixinextras                   |0.2.0-beta.6        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		sophisticatedbackpacks-1.20.1-3.20.5.1044.jar     |Sophisticated Backpacks       |sophisticatedbackpacks        |3.20.5.1044         |ENQUEUE_IM|Manifest: NOSIGNATURE
+		relics-1.20.1-0.8.0.5.jar                         |Relics                        |relics                        |0.8.0.5             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		balm-forge-1.20.1-7.3.7-all.jar                   |Balm                          |balm                          |7.3.7               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Terralith_1.20.x_v2.5.4.jar                       |Terralith                     |terralith                     |2.5.4               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		carryon-forge-1.20.1-2.1.2.7.jar                  |Carry On                      |carryon                       |2.1.2.7             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		forge-1.20.1-47.3.6-universal.jar                 |Forge                         |forge                         |47.3.6              |ENQUEUE_IM|Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		twilightforest-1.20.1-4.3.2508-universal.jar      |The Twilight Forest           |twilightforest                |4.3.2508            |ENQUEUE_IM|Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		DistantHorizons-2.1.2-a-1.20.1-forge-fabric.jar   |Distant Horizons              |distanthorizons               |2.1.2-a             |ERROR     |Manifest: NOSIGNATURE
+		alexscaves-1.1.5.jar                              |Alex's Caves                  |alexscaves                    |1.1.5               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		ToolBelt-1.20.1-1.20.01.jar                       |Tool Belt                     |toolbelt                      |1.20.01             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		endrem_forge-5.3.3-R-1.20.1.jar                   |End Remastered                |endrem                        |5.3.3-R-1.20.1      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		vc_gliders-forge-1.1.5.jar                        |Gliders                       |vc_gliders                    |1.1.5               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		lionfishapi-1.9.jar                               |LionfishAPI                   |lionfishapi                   |1.9                 |ENQUEUE_IM|Manifest: NOSIGNATURE
+		L_Enders_Cataclysm-1.99.6-1.20.1.jar              |Cataclysm Mod                 |cataclysm                     |1.99.5              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		curios-forge-5.9.1+1.20.1.jar                     |Curios API                    |curios                        |5.9.1+1.20.1        |ENQUEUE_IM|Manifest: NOSIGNATURE
+		gravestone-forge-1.20.1-1.0.20.jar                |Gravestone Mod                |gravestone                    |1.20.1-1.0.20       |ENQUEUE_IM|Manifest: NOSIGNATURE
+		[1.20.1] SecurityCraft v1.9.10.jar                |SecurityCraft                 |securitycraft                 |1.9.10              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		dungeons-and-taverns-3.0.3.f[Forge].jar           |Dungeons and Taverns          |mr_dungeons_andtaverns        |3.0.3.f             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		elevatorid-1.20.1-lex-1.9.jar                     |Elevator Mod                  |elevatorid                    |1.20.1-lex-1.9      |ENQUEUE_IM|Manifest: NOSIGNATURE
+		sbblacklist-1.0.1.jar                             |Sophisticated Backpack Contain|sbblacklist                   |1.0.1               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		inventoryhud.forge.1.20.1-3.4.24.jar              |Inventory HUD+                |inventoryhud                  |3.4.24              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		chococraft-1.20.1-forge-0.9.12.jar                |Chococraft 4                  |chococraft                    |0.9.12              |ENQUEUE_IM|Manifest: NOSIGNATURE
+		Aquaculture-1.20.1-2.5.2.jar                      |Aquaculture 2                 |aquaculture                   |2.5.2               |ENQUEUE_IM|Manifest: NOSIGNATURE
+		framework-forge-1.20.1-0.7.6.jar                  |Framework                     |framework                     |0.7.6               |ENQUEUE_IM|Manifest: 0d:78:5f:44:c0:47:0c:8c:e2:63:a3:04:43:d4:12:7d:b0:7c:35:37:dc:40:b1:c1:98:ec:51:eb:3b:3c:45:99
+		Towns-and-Towers-1.12-Fabric+Forge.jar            |Towns and Towers              |t_and_t                       |0.0NONE             |ENQUEUE_IM|Manifest: NOSIGNATURE
+		cristellib-1.1.5-forge.jar                        |Cristel Lib                   |cristellib                    |1.1.5               |ENQUEUE_IM|Manifest: NOSIGNATURE
+	Crash Report UUID: a07a0667-1d04-4e70-ae92-a46580ef3bd9
+	FML: 47.3
+	Forge: net.minecraftforge:47.3.6
